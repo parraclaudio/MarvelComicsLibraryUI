@@ -3,8 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 export const environment = {
   production: false,
-  apiUrl: 'http://gateway.marvel.com/v1/public/',
-  apiKey: '<Your public key here>',
+  urlAddress: 'http://localhost:5000',
   settings: {
     appErrorPrefix: '[Marvel Comic Library Error] ',
     appTitle: 'Marvel Comic Library',

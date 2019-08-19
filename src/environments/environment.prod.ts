@@ -1,7 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://gateway.marvel.com/v1/public/',
-  apiKey: '<Your public key here>',
+  urlAddress: 'http://localhost:5000',
   settings: {
     appErrorPrefix: '[Marvel Comic Library Error] ',
     appTitle: 'Marvel Comic Library',

@@ -9,14 +9,13 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth-interceptor.service';
 import { AppErrorHandler } from './app-error-handler';
 import { AppMaterialModule } from './app-material.module';
-import { CustomerComponent } from './customer/customer.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
-  declarations: [AppComponent, CustomerComponent, HeaderComponent, LayoutComponent, HomeComponent, SidenavListComponent],
+  declarations: [AppComponent, HeaderComponent, LayoutComponent, HomeComponent, SidenavListComponent],
   imports: [
     AppMaterialModule,
     AppRoutingModule,
