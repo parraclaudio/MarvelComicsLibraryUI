@@ -2,7 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["toastr"]
+    "types": [
+      "toastr"
+    ]
   },
   "files": [
     "src/main.ts",

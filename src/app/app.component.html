@@ -1,29 +1,13 @@
-<div fxLayout="column" fxFill>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <a mat-icon-button href="https://www.angular.io/" target="_blank">
-        <img src="assets/angular.png">
-      </a>
-
-      <h2 fxFlex>{{title}}</h2>
-
-      <a mat-icon-button  routerLink="customer">
-        <mat-icon>assignment_ind</mat-icon>
-      </a>
-
-    </mat-toolbar-row>
-  </mat-toolbar>
-
-
-  
-  <div fxFlex class="content">
-    <router-outlet></router-outlet>
-  </div>
-  
-  <!--<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <small fxFlex>version: {{version}}</small>
-      <small>Data provided by Marvel. © 2014 Marvel</small>
-    </mat-toolbar-row>
-  </mat-toolbar>-->
-</div>
+<app-layout>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</app-layout>

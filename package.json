@@ -22,9 +22,11 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-    "@types/angular-toastr": "^1.6.34",
     "@types/toastr": "^2.1.37",
+    "components-font-awesome": "^5.9.0",
+    "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
+    "toastr": "^2.1.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

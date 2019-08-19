@@ -12,6 +12,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
     imports: [
@@ -27,7 +30,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatSidenavModule,
         MatStepperModule,
         MatTabsModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatTableModule,
+        MatListModule
     ],
     exports: [
         MatButtonModule,
@@ -42,7 +47,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatSidenavModule,
         MatStepperModule,
         MatTabsModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatTableModule,
+        MatListModule
     ]
 })
 export class AppMaterialModule { }
