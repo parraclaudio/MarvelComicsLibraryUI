@@ -12,10 +12,10 @@ export class CustomerListComponent implements OnInit {
 
 
   public displayedColumns = [
-    'email', 
-    'cpf', 
-    'name',
-    'telephone', 
+    'Email', 
+    'Cpf', 
+    'Name',
+    'Telephone', 
     'details', 
     'update', 
     'delete'
@@ -30,15 +30,18 @@ export class CustomerListComponent implements OnInit {
   }
 
   public getAllCustomers = () => {
+    this.repoService.requestT().subscribe(resp => {
 
-
-    this.repoService.getData('api/customer').subscribe(response => {
-      //do something with response
-    }, err => {
-      console.log(err.message);
-    }, () => {
-      console.log('completed');
-    })
+      const j = JSON.parse(resp.data);
+      const c = j as Customer[];
+      
+      const customerEmail = c[0];
+      console.log(customerEmail);
+       console.log(customerEmail.Email);
+       this.dataSource.data = c;
+       console.log(this.dataSource.data)
+    });
+    
   }
 
   public redirectToDetails = (key: string) => {
