@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://gateway.marvel.com/v1/public/',
+  apiKey: '<Your public key here>',
+  settings: {
+    appErrorPrefix: '[Marvel Comic Library Error] ',
+    appTitle: 'Marvel Comic Library',
+    version: '1.0.0'
+  }
 };
 
 /*
