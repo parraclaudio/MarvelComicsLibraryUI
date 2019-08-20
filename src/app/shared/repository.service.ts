@@ -11,13 +11,9 @@ export class RepositoryService {
 
   constructor(private http: HttpClient) { }
 
-  public requestT (): Observable<any>{
-      return this.http.get<any>(environment.urlAddress+ '/api/'+ 'customer');
-  }
-
-  public getData = (route: string) => {
+  public getData = (route: string): Observable<any> => {
     console.log(this.createCompleteRoute(route, environment.urlAddress));
-    return this.http.get(this.createCompleteRoute(route, environment.urlAddress));
+    return this.http.get<any>(this.createCompleteRoute(route, environment.urlAddress));
   }
 
   public create = (route: string, body) => {
@@ -33,7 +29,7 @@ export class RepositoryService {
   }
 
   private createCompleteRoute = (route: string, envAddress: string) => {
-    return `${envAddress}/${route}`;
+    return `${envAddress}/api/${route}`;
   }
 
   private generateHeaders = () => {

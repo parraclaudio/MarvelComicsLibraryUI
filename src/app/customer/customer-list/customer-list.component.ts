@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { RepositoryService } from 'src/app/shared/repository.service';
 import { Customer } from '../../_interface/customer.model';
+import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -23,37 +25,43 @@ export class CustomerListComponent implements OnInit {
   
   public dataSource = new MatTableDataSource<Customer>();
 
-  constructor(private repoService: RepositoryService) { }
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  
+  constructor(private repoService: RepositoryService, private router : Router) { }
+
+
 
   ngOnInit() {
     this.getAllCustomers();
   }
 
-  public getAllCustomers = () => {
-    this.repoService.requestT().subscribe(resp => {
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
 
-      const j = JSON.parse(resp.data);
-      const c = j as Customer[];
-      
-      const customerEmail = c[0];
-      console.log(customerEmail);
-       console.log(customerEmail.Email);
-       this.dataSource.data = c;
-       console.log(this.dataSource.data)
+  public getAllCustomers = () => {
+    this.repoService.getData('customer').subscribe(resp => {
+      const customers = JSON.parse(resp.data) as Customer[];
+      this.dataSource.data = customers;
     });
     
   }
 
-  public redirectToDetails = (key: string) => {
+  public redirectToDetails = (id: string) => {
+    let url: string = `/customer/details/${id}`;
+    this.router.navigate([url]);
+  }
+  
+  public redirectToUpdate = (Key: string) => {
 
   }
 
-  public redirectToUpdate = (key: string) => {
+  public redirectToDelete = (Key: string) => {
 
   }
 
-  public redirectToDelete = (key: string) => {
-
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
 }

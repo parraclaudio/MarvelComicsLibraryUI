@@ -14,7 +14,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
     imports: [
@@ -32,7 +35,11 @@ import { MatListModule } from '@angular/material/list';
         MatTabsModule,
         MatToolbarModule,
         MatTableModule,
-        MatListModule
+        MatListModule,
+        MatPaginatorModule,
+        MatSelectModule ,
+        MatCheckboxModule,
+        MatExpansionModule
     ],
     exports: [
         MatButtonModule,
@@ -49,7 +56,11 @@ import { MatListModule } from '@angular/material/list';
         MatTabsModule,
         MatToolbarModule,
         MatTableModule,
-        MatListModule
+        MatListModule,
+        MatPaginatorModule,
+        MatSelectModule ,
+        MatCheckboxModule,
+        MatExpansionModule
     ]
 })
 export class AppMaterialModule { }
