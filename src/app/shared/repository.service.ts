@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment';
-import { Customer } from '../_interface/customer.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,12 +11,11 @@ export class RepositoryService {
   constructor(private http: HttpClient) { }
 
   public getData = (route: string): Observable<any> => {
-    console.log(this.createCompleteRoute(route, environment.urlAddress));
     return this.http.get<any>(this.createCompleteRoute(route, environment.urlAddress));
   }
 
-  public create = (route: string, body) => {
-    return this.http.post(this.createCompleteRoute(route, environment.urlAddress), body, this.generateHeaders());
+  public create = (route: string, body): Observable<any>  => {
+    return this.http.post<any>(this.createCompleteRoute(route, environment.urlAddress), body, this.generateHeaders());
   };
 
   public update = (route: string, body) => {
@@ -34,8 +32,7 @@ export class RepositoryService {
 
   private generateHeaders = () => {
     return {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' ,
-    'Accept' : '*/*'})
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'})
     }
   }
 }

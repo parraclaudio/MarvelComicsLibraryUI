@@ -1,38 +1,30 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center">
-    <mat-card fxFlex="500px" fxFlex.xs="100%">
-        <mat-card-title>Details for the clicked owner</mat-card-title>
+    <mat-card fxFlex="100%" fxFlex.xs="100%">
+        <mat-card-title>Customer's detail
+            <hr>
+        </mat-card-title>
         <mat-card-content>
-            <div fxLayout="column wrap" fxLayoutGap="40px">
+            <div fxLayout="column wrap" fxLayoutGap="10px">
                 <div fxLayout="row wrap" fxFlex>
-                    <div fxFlex><strong>Owner's name:</strong></div>
+                    <div fxFlex><strong>Email:</strong></div>
+                    <div fxFlex>{{customer?.Email}}</div>
+                </div>
+
+                <div fxLayout="row wrap" fxFlex>
+                    <div fxFlex><strong>CPF:</strong></div>
+                    <div fxFlex>{{customer?.Cpf}}</div>
+                </div>
+
+                <div fxLayout="row wrap" fxFlex>
+                    <div fxFlex><strong>Name:</strong></div>
                     <div fxFlex>{{customer?.Name}}</div>
                 </div>
 
                 <div fxLayout="row wrap" fxFlex>
-                    <div fxFlex><strong>Date of birth:</strong></div>
-                    <div fxFlex>{{owner?.dateOfBirth | date}}</div>
+                    <div fxFlex><strong>Telephone</strong></div>
+                    <div fxFlex>{{customer?.Telephone}}</div>
                 </div>
-
-                <div fxLayout="row wrap" fxFlex *ngIf='owner?.accounts.length <= 2; else advancedUser'>
-                    <div fxFlex><strong>Type of user:</strong></div>
-                    <div fxFlex class="beginner-color">Beginner user.</div>
-                </div>
-                <ng-template #advancedUser>
-                    <div fxLayout="row wrap" fxFlex>
-                        <div fxFlex><strong>Type of user:</strong></div>
-                        <div fxFlex class="advanced-color">Advanced user</div>
-                    </div>
-                </ng-template>
             </div>
         </mat-card-content>
-        <mat-card-actions>
-            <mat-form-field>
-                <mat-select placeholder="Show accounts" (selectionChange)="onChange($event)">
-                    <mat-option *ngFor="let opt of selectOptions" [value]="opt.value">
-                        {{opt.name}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </mat-card-actions>
     </mat-card>
 </section>

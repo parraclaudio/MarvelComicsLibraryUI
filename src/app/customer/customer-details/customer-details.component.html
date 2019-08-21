@@ -1,2 +1,2 @@
 <app-customer-data [customer]='customer' (selectEmitt)='showComic = $event'></app-customer-data>
-<app-comic-data *ngIf='showComic'  [comics]='customer?.comics'></app-comic-data>
+<app-comic-data  [comics]='customer?.comics'></app-comic-data>

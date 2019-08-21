@@ -4,6 +4,7 @@ export interface Comic {
     Title: string;
     IssueNumber: number;
     PageCount: number;
+    CoverImage: string;
     Description: string;
     Status: number;
     CustomerKey: string;

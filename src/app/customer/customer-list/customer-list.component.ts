@@ -18,7 +18,6 @@ export class CustomerListComponent implements OnInit {
     'Cpf', 
     'Name',
     'Telephone', 
-    'details', 
     'update', 
     'delete'
   ];

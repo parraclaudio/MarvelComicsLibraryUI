@@ -4,8 +4,13 @@ table {
     overflow-y: hidden;
     min-width: 500px;
 }
- 
+
 th.mat-header-cell {
     text-align: left;
     max-width: 300px;
+    font-weight: bold;
+}
+
+.mat-row:hover {
+  background-color: lightgray;
 }

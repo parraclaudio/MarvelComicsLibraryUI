@@ -9,3 +9,4 @@ export const environment = {
 };
 
 toastr.options.timeOut = 1500;
+toastr.options.closeButton =true;

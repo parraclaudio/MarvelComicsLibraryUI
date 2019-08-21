@@ -5,3 +5,16 @@
 mat-accordion{
     margin-top: 20px;
 }
+
+mat-card-content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+mat-card{
+padding-top: 20px;
+}
+
+img{
+  width: 50%;
+}

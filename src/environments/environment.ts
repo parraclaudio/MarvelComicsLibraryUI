@@ -5,11 +5,15 @@ export const environment = {
   production: false,
   urlAddress: 'http://localhost:5000',
   settings: {
-    appErrorPrefix: '[Marvel Comic Library Error] ',
+    appErrorPrefix: 'Marvel Comic Library Error',
     appTitle: 'Marvel Comic Library',
     version: '1.0.0'
   }
 };
+
+toastr.options.timeOut = 1500;
+toastr.options.closeButton = true;
+toastr.options.progressBar = true;
 
 /*
  * For easier debugging in development mode, you can import the following file

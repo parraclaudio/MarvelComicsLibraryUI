@@ -1,20 +1,29 @@
 <section fxLayout="row wrap" fxLayoutAlign="center center">
-    <mat-accordion fxFlex="500px" fxFlex.xs="100%">
-        <mat-expansion-panel *ngFor="let comic of comics; let i = index">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    {{comic?.Title}}. Comic
-                </mat-panel-title>
-                <mat-panel-description>
-                    Account Information
-                </mat-panel-description>
-            </mat-expansion-panel-header>
+<mat-card>
+    <mat-card-title>Borrow List
+        <hr>
+    </mat-card-title>
+    <mat-card-content>
+            <mat-accordion fxFlex="100%" fxFlex.xs="100%">
+                <mat-expansion-panel *ngFor="let comic of comics; let i = index">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Devolution Date:  {{comic?.DevolutionDate | date:'dd/MM/yyyy'}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{comic?.Title}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
 
-            <div fxLayout="row wrap" fxLayoutAlign="center center">
-                <div fxFlex="35%" class="text-color"><strong>type:</strong> &nbsp; {{comic?.Title}}</div>
-                <div fxFlex class="text-color"><strong>created:</strong> &nbsp; {{comic?.Description}}</div>
-            </div>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center">
+                        <div fxFlex="30%" fxLayoutAlign="center center" >
+                            <img src={{comic?.CoverImage}} >
+                        </div>
+                        <div fxFlex ><strong>Description:</strong> &nbsp; {{comic?.Description}}</div>
+                    </div>
 
-        </mat-expansion-panel>
-    </mat-accordion>
+                </mat-expansion-panel>
+            </mat-accordion>
+            </mat-card-content>
+            </mat-card>
 </section>
