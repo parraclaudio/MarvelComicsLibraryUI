@@ -7,6 +7,7 @@ import { ServerErrorComponent } from './error-pages/server-error/server-error.co
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'customer', loadChildren: "./customer/customer.module#CustomerModule" }, 
+  { path: 'comic', loadChildren: "./comic/comic.module#ComicModule" }, 
   { path: '404', component: NotFoundComponent },
   { path: '500', component: ServerErrorComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

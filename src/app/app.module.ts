@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 import { ServerErrorComponent } from './error-pages/server-error/server-error.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, LayoutComponent, HomeComponent, SidenavListComponent, NotFoundComponent, ServerErrorComponent],
@@ -25,7 +26,8 @@ import { ServerErrorComponent } from './error-pages/server-error/server-error.co
     BrowserModule,
     //CharacterModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

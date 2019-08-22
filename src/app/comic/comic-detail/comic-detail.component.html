@@ -1,0 +1,16 @@
+<mat-card *ngIf="comic">
+  <mat-card-header>
+    <mat-card-title>{{comic.Title}}</mat-card-title>
+    <mat-card-subtitle>Upc:{{comic.Upc}}</mat-card-subtitle>
+  </mat-card-header>
+  <div>
+    <img mat-card-image [src]="comic.CoverImage">
+  </div>
+  <mat-card-content>
+    <p>{{comic.Description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button></a>
+    <button mat-raised-button color="primary">Add Library</button>
+  </mat-card-actions>
+</mat-card>

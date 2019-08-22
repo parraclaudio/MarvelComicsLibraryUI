@@ -1,0 +1,13 @@
+
+
+<img [src]="comic.CoverImage" alt="photo of {{comic.Title}}" (click)="showComic()">
+
+<mat-grid-tile-footer>
+  <h3 mat-line>{{comic.Title}}</h3>
+  <button mat-icon-button (click)="showComic()">
+      <mat-icon>info</mat-icon>
+  </button>
+    <button mat-icon-button (click)="showComic()">
+      <mat-icon>library_add</mat-icon>
+    </button>
+</mat-grid-tile-footer>
