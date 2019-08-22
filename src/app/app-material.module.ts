@@ -18,6 +18,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -39,7 +41,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatPaginatorModule,
         MatSelectModule ,
         MatCheckboxModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatBadgeModule,
+        MatTooltipModule
     ],
     exports: [
         MatButtonModule,
@@ -60,7 +64,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatPaginatorModule,
         MatSelectModule ,
         MatCheckboxModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatBadgeModule,
+        MatTooltipModule
     ]
 })
 export class AppMaterialModule { }

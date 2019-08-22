@@ -1,13 +1,19 @@
-
-
 <img [src]="comic.CoverImage" alt="photo of {{comic.Title}}" (click)="showComic()">
 
 <mat-grid-tile-footer>
   <h3 mat-line>{{comic.Title}}</h3>
-  <button mat-icon-button (click)="showComic()">
-      <mat-icon>info</mat-icon>
+  
+  <!--button mat-icon-button (click)="showComic()">
+    <mat-icon matBadge="8" m matBadgeColor="accent">lock</mat-icon>
   </button>
-    <button mat-icon-button (click)="showComic()">
-      <mat-icon>library_add</mat-icon>
-    </button>
+  <button mat-icon-button (click)="showComic()">
+    <mat-icon>library_add</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="showComic()">
+    <mat-icon matBadge="8" m matBadgeColor="accent">info</mat-icon>
+  </button>-->
+  <button mat-icon-button matTooltip="Add a new unit of this comic to Library" (click)="addInLibrary(comic.ComicId)">
+    <mat-icon>library_add</mat-icon>
+  </button>
 </mat-grid-tile-footer>
