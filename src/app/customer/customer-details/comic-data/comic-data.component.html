@@ -8,7 +8,10 @@
                 <mat-expansion-panel *ngFor="let comic of comics; let i = index">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                           Devolution Date:  {{comic?.DevolutionDate | date:'dd/MM/yyyy'}}
+                           Devolution Date: &nbsp;
+                           <div [style.color]="getDelayedColor(comic.DevolutionDate)">  
+                               {{comic?.DevolutionDate | date:'dd/MM/yyyy'}}
+                            </div>
                         </mat-panel-title>
                         <mat-panel-description>
                             {{comic?.Title}}
